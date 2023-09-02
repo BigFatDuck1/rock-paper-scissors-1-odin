@@ -22,7 +22,7 @@ let getComputerChoice = () => {
             computerOutcome = "paper";
             break;
         case 2:
-            computerOutcome = "boo";
+            computerOutcome = "scissors";
             break;
     }
 
@@ -30,4 +30,70 @@ let getComputerChoice = () => {
 }
 
 let computerChoice = getComputerChoice();
-console.log(computerChoice);
+console.log("Computer: ", computerChoice);
+
+//Player Input
+let playerInput = prompt("Please pick Rock, Paper, or Scissors: ").toLowerCase();
+console.log("Player: ", playerInput)
+
+//battleFunction
+let battleFunction = (playerchoice) => {
+    if (playerchoice == computerChoice) {
+        //Draw
+        console.log("Draw!")
+    }
+
+    //Player picked "rock"
+    if (playerchoice == "rock") {
+        if (computerChoice == "scissors") {
+            //Player wins
+            console.log("Player wins")
+        }
+        else if (computerChoice == "paper") {
+            //Player loses
+            console.log("Computer wins")
+        }
+    }
+    
+    //Player picked "paper"
+    if (playerchoice == "paper") {
+        if (computerChoice == "rock") {
+            //Player wins
+            console.log("Player wins")
+        }
+        else if (computerChoice == "scissors") {
+            //Player loses
+            console.log("Computer wins")
+        }
+    }
+
+    //Player picked "scissors"
+    if (playerchoice == "scissors") {
+        if (computerChoice == "paper") {
+            //Player wins
+            console.log("Player wins")
+        }
+        else if (computerChoice == "rock") {
+            //Player loses
+            console.log("Computer wins")
+        }
+    }
+
+}
+
+//Send to respective function
+switch(playerInput) {
+    case "rock":
+        battleFunction("rock");
+        break;
+    case "paper":
+        battleFunction("paper");
+        break;
+    case "scissors":
+        battleFunction("scissors");
+        break;
+    default:
+        console.log("Your input was invalid.");
+}
+
+
