@@ -1,5 +1,4 @@
-//Code for one round of rock, paper, scissors
-let oneRound = () => {
+
 
 //Computer makes a choice
 
@@ -113,27 +112,4 @@ switch(playerInput) {
 
 console.log("Winner is: ", winnerStore);
 
-return winnerStore
 
-
-}
-
-//Log player score
-let playerScore = 0;
-
-//For loop to loop number of rounds
-let runGame = (number_of_rounds) => {
-    for (let i = 0; i < number_of_rounds; i++) {
-        let result = oneRound().toLowerCase();
-        //Log score
-        if (result == "player") {
-            playerScore += 1;
-        }
-        else if (result == "draw") {
-            playerScore += 0.5;
-        }
-    }
-}
-
-runGame(3);
-console.log("Player score: ", playerScore)
