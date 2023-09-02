@@ -38,9 +38,13 @@ console.log("Player: ", playerInput)
 
 //battleFunction
 let battleFunction = (playerchoice) => {
+
+    let winner = "";
+
     if (playerchoice == computerChoice) {
         //Draw
         console.log("Draw!")
+        winner = "Draw!"
     }
 
     //Player picked "rock"
@@ -48,10 +52,12 @@ let battleFunction = (playerchoice) => {
         if (computerChoice == "scissors") {
             //Player wins
             console.log("Player wins")
+            winner = "Player"
         }
         else if (computerChoice == "paper") {
             //Player loses
             console.log("Computer wins")
+            winner = "Computer"
         }
     }
     
@@ -60,10 +66,12 @@ let battleFunction = (playerchoice) => {
         if (computerChoice == "rock") {
             //Player wins
             console.log("Player wins")
+            winner = "Player"
         }
         else if (computerChoice == "scissors") {
             //Player loses
             console.log("Computer wins")
+            winner = "Computer"
         }
     }
 
@@ -72,28 +80,36 @@ let battleFunction = (playerchoice) => {
         if (computerChoice == "paper") {
             //Player wins
             console.log("Player wins")
+            winner = "Player"
         }
         else if (computerChoice == "rock") {
             //Player loses
             console.log("Computer wins")
+            winner = "Computer"
         }
     }
 
+    return winner
+
 }
+
+let winnerStore = "";
 
 //Send to respective function
 switch(playerInput) {
     case "rock":
-        battleFunction("rock");
+        winnerStore = battleFunction("rock");
         break;
     case "paper":
-        battleFunction("paper");
+        winnerStore = battleFunction("paper");
         break;
     case "scissors":
-        battleFunction("scissors");
+        winnerStore = battleFunction("scissors");
         break;
     default:
         console.log("Your input was invalid.");
 }
+
+console.log("Winner is: ", winnerStore);
 
 
