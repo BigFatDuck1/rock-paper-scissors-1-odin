@@ -16,6 +16,7 @@ body {
 .icons {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .player_icons, .computer_icons {
@@ -39,4 +40,10 @@ body {
 .subline {
     font-size: 30px;
     margin-top: 10px;
+}
+
+.choice_text {
+    font-family: "Bebas Neue";
+    font-size: 25px;
+    color: grey;
 }
