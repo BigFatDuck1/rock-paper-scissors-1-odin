@@ -11,6 +11,9 @@ body {
 .result_panel {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .icons {
@@ -22,6 +25,9 @@ body {
 .player_icons, .computer_icons {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 50px;
 }
 
 .title {
@@ -46,4 +52,10 @@ body {
     font-family: "Bebas Neue";
     font-size: 25px;
     color: grey;
+}
+
+.score_text {
+    font-family: "Bebas Neue";
+    font-size: 35px;
+    color: rgb(27, 27, 27);
 }
