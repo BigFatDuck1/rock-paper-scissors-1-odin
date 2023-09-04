@@ -1,6 +1,42 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.scorepanel {
+body {
+    background-color: antiquewhite;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    justify-items: center;
+}
+
+.result_panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.player_icons, .computer_icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bebas Neue";
+}
+
+.headline {
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+.subline {
+    font-size: 30px;
+    margin-top: 10px;
 }

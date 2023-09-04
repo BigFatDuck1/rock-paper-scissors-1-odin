@@ -135,7 +135,7 @@ let runGame = (number_of_rounds) => {
     }
 }
 
-runGame(3);
-console.log("Player score: ", playerScore);
-let browserScore = document.querySelector("#score");
-browserScore.textContent = playerScore;
+// runGame(3);
+// console.log("Player score: ", playerScore);
+// let browserScore = document.querySelector("#score");
+// browserScore.textContent = playerScore;
