@@ -59,3 +59,45 @@ body {
     font-size: 35px;
     color: rgb(27, 27, 27);
 }
+
+.restart_button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-family: "Bebas Neue";
+    padding: 6px 12px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.restart_button:hover {
+    box-shadow: 0 10px 12px 0 rgba(0,0,0,0.24), 0 15px 30px 0 rgba(0,0,0,0.19);
+    background-color: #4CAF50;
+    color: yellow;
+    transition: 0.5s
+}
+
+.icon_button {
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.icon_button:hover {
+    background-color: rgb(37, 37, 37);
+    color: yellow;
+    /* scaleX to keep the mirrored orientation */
+    transform: scale(1.5) scaleX(-1); 
+    transition: all 0.5s ease;
+
+}
+
+.pressed {
+    transform: scale(2);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+} 
