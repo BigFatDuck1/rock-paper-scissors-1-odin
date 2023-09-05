@@ -1,8 +1,12 @@
 
+//Store each button into a variable
+const rock_button = document.querySelector("#rock_button");
+const paper_button = document.querySelector("#paper_button");
+const scissors_button = document.querySelector("#scissors_button");
 
 
 //Code for one round of rock, paper, scissors
-let oneRound = () => {
+let oneRound = (passed_player_input) => {
 
 //Computer makes a choice
 
@@ -37,8 +41,10 @@ let computerChoice = getComputerChoice();
 console.log("Computer: ", computerChoice);
 
 //Player Input
-let playerInput = prompt("Please pick Rock, Paper, or Scissors: ").toLowerCase();
-console.log("Player: ", playerInput)
+//let playerInput = prompt("Please pick Rock, Paper, or Scissors: ").toLowerCase();
+//console.log("Player: ", playerInput)
+let playerInput = passed_player_input;
+console.log(`Player: ${playerInput}`);
 
 //battleFunction
 let battleFunction = (playerchoice) => {
@@ -142,3 +148,24 @@ let runGame = (number_of_rounds) => {
 // console.log("Player score: ", playerScore);
 // let browserScore = document.querySelector("#score");
 // browserScore.textContent = playerScore;
+
+//Code for translating click into player choice
+let buttonToPlayerChoice = () => {
+
+    rock_button.addEventListener("click", () => {
+        oneRound("rock");
+        return 0;
+    });
+
+    paper_button.addEventListener("click", () => {
+        oneRound("paper");
+        return 0;
+    });
+
+    scissors_button.addEventListener("click", () => {
+        oneRound("scissors");
+        return 0;
+    });
+}
+
+buttonToPlayerChoice();

@@ -92,7 +92,7 @@ body {
     color: yellow;
     /* scaleX to keep the mirrored orientation */
     transform: scale(1.5) scaleX(-1); 
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 
 }
 
