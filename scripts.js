@@ -4,6 +4,9 @@ const rock_button = document.querySelector("#rock_button");
 const paper_button = document.querySelector("#paper_button");
 const scissors_button = document.querySelector("#scissors_button");
 
+//Log player score
+let playerScore = 0;
+
 
 //Code for one round of rock, paper, scissors
 let oneRound = (passed_player_input) => {
@@ -122,27 +125,28 @@ switch(playerInput) {
 
 console.log("Winner is: ", winnerStore);
 
+if (winnerStore == "Player") {
+    playerScore += 1;
+}
+
 return winnerStore
 
 
 }
 
-//Log player score
-let playerScore = 0;
-
 //For loop to loop number of rounds
-let runGame = (number_of_rounds) => {
-    for (let i = 0; i < number_of_rounds; i++) {
-        let result = oneRound().toLowerCase();
-        //Log score
-        if (result == "player") {
-            playerScore += 1;
-        }
-        else if (result == "draw") {
-            playerScore += 0.5;
-        }
-    }
-}
+// let runGame = (number_of_rounds) => {
+//     for (let i = 0; i < number_of_rounds; i++) {
+//         let result = oneRound().toLowerCase();
+//         //Log score
+//         if (result == "player") {
+//             playerScore += 1;
+//         }
+//         else if (result == "draw") {
+//             playerScore += 0.5;
+//         }
+//     }
+// }
 
 // runGame(3);
 // console.log("Player score: ", playerScore);
