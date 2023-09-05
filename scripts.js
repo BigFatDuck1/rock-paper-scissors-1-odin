@@ -6,6 +6,10 @@ const scissors_button = document.querySelector("#scissors_button");
 
 //Log player score
 let playerScore = 0;
+let current_winner = "";
+
+//Updates player information with each round
+let updatePlayerInfo;
 
 
 //Code for one round of rock, paper, scissors
@@ -102,6 +106,7 @@ let battleFunction = (playerchoice) => {
         }
     }
 
+    current_winner = winner;
     return winner
 
 }
@@ -153,21 +158,30 @@ return winnerStore
 // let browserScore = document.querySelector("#score");
 // browserScore.textContent = playerScore;
 
+//Function that updates player info
+updatePlayerInfo = () => {
+    document.querySelector(".winner_whois").textContent = `Winner: ${current_winner}`;
+    document.querySelector(".scoreboard").textContent = `Your score: ${playerScore}`;
+}
+
 //Code for translating click into player choice
 let buttonToPlayerChoice = () => {
 
     rock_button.addEventListener("click", () => {
         oneRound("rock");
+        updatePlayerInfo();
         return 0;
     });
 
     paper_button.addEventListener("click", () => {
         oneRound("paper");
+        updatePlayerInfo();
         return 0;
     });
 
     scissors_button.addEventListener("click", () => {
         oneRound("scissors");
+        updatePlayerInfo();
         return 0;
     });
 }
