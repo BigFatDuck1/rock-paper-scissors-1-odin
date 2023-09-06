@@ -123,5 +123,9 @@ body {
 }
 
 .flicker_yellow {
-    color: yellow;
+    color: rgb(161, 161, 0);
+}
+
+.flicker_blue {
+    color: blue;
 }

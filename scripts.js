@@ -6,6 +6,8 @@ const scissors_button = document.querySelector("#scissors_button");
 
 //Store all computer icons into one variable
 let computer_icons = document.querySelectorAll(".computer_icons");
+//Store all scoreboard elements into one variable
+let scoreboard_elements = document.querySelectorAll(".score_text");
 
 //Log player score
 let player_score = 0;
@@ -168,9 +170,37 @@ return winnerStore
 // browserScore.textContent = player_score;
 
 //Function that updates player info
+let playerInfoFlicker;
 updatePlayerInfo = () => {
     document.querySelector(".winner_whois").textContent = `Winner: ${current_winner}`;
     document.querySelector(".scoreboard").textContent = `Your score: ${player_score}`;
+
+    playerInfoFlicker(); //Gives the result a slight flicker to show it has updated
+}
+
+playerInfoFlicker = () => {
+
+    //Add yellow flicker to scoreboard
+    document.querySelector(".scoreboard").classList.add("flicker_yellow");
+
+    //Green or red flicker depending on who won
+    if (current_winner === "Computer") {
+        document.querySelector(".winner_whois").classList.add("flicker_red");
+    } else if (current_winner === ("Player")) {
+        document.querySelector(".winner_whois").classList.add("flicker_green");
+    } else if (current_winner == ("Draw")) {
+        document.querySelector(".winner_whois").classList.add("flicker_blue");
+    }
+    
+    //Remove all flicker classes
+    function removeFlicker() {
+        scoreboard_elements.forEach((element) => {
+            element.classList.remove("flicker_yellow", "flicker_green", "flicker_red", "flicker_blue");
+            return 0;
+        })
+    }
+
+    setTimeout(removeFlicker, 100); //Flickers for 0.1 seconds
 }
 
 //Function that updates UI with computer choice
@@ -179,6 +209,7 @@ displayComputerChoice = () => {
     //Remove .activated classes from all computer icons
     computer_icons.forEach((element) => {
         element.classList.remove("activated")
+        return 0;
     })
 
     let computer_choice_class = "";
