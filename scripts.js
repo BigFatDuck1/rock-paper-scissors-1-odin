@@ -12,6 +12,7 @@ let scoreboard_elements = document.querySelectorAll(".score_text");
 //Log player score
 let player_score = 0;
 let current_winner = "";
+let current_round = 0;
 
 //Updates player information with each round
 let updatePlayerInfo;
@@ -20,8 +21,17 @@ let updatePlayerInfo;
 let displayComputerChoice;
 let global_computer_choice = "";
 
+//Updates round number
+let updateRound = () => {
+    current_round += 1;
+
+    document.querySelector(".round").textContent = `Round: ${current_round}`;
+}
+
 //Code for one round of rock, paper, scissors
 let oneRound = (passed_player_input) => {
+
+updateRound();
 
 //Computer makes a choice
 
