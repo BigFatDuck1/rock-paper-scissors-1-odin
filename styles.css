@@ -101,3 +101,21 @@ body {
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
 } 
+
+.activated {
+    transform: scale(1.5);
+    color: red;
+    transition: 0.2s;
+}
+
+.flicker_green {
+    color: green;
+}
+
+.flicker_red {
+    color: red;
+}
+
+.flicker_yellow {
+    color: yellow;
+}

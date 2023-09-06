@@ -4,13 +4,19 @@ const rock_button = document.querySelector("#rock_button");
 const paper_button = document.querySelector("#paper_button");
 const scissors_button = document.querySelector("#scissors_button");
 
+//Store all computer icons into one variable
+let computer_icons = document.querySelectorAll(".computer_icons");
+
 //Log player score
-let playerScore = 0;
+let player_score = 0;
 let current_winner = "";
 
 //Updates player information with each round
 let updatePlayerInfo;
 
+//Updates UI with computer choice
+let displayComputerChoice;
+let global_computer_choice = "";
 
 //Code for one round of rock, paper, scissors
 let oneRound = (passed_player_input) => {
@@ -45,6 +51,9 @@ let getComputerChoice = () => {
 }
 
 let computerChoice = getComputerChoice();
+global_computer_choice = computerChoice;
+//Function that updates UI with computer choice (displays computer choice)
+displayComputerChoice();
 console.log("Computer: ", computerChoice);
 
 //Player Input
@@ -106,7 +115,6 @@ let battleFunction = (playerchoice) => {
         }
     }
 
-    current_winner = winner;
     return winner
 
 }
@@ -131,9 +139,10 @@ switch(playerInput) {
 console.log("Winner is: ", winnerStore);
 
 if (winnerStore == "Player") {
-    playerScore += 1;
+    player_score += 1;
 }
 
+current_winner = winnerStore;
 return winnerStore
 
 
@@ -145,24 +154,53 @@ return winnerStore
 //         let result = oneRound().toLowerCase();
 //         //Log score
 //         if (result == "player") {
-//             playerScore += 1;
+//             player_score += 1;
 //         }
 //         else if (result == "draw") {
-//             playerScore += 0.5;
+//             player_score += 0.5;
 //         }
 //     }
 // }
 
 // runGame(3);
-// console.log("Player score: ", playerScore);
+// console.log("Player score: ", player_score);
 // let browserScore = document.querySelector("#score");
-// browserScore.textContent = playerScore;
+// browserScore.textContent = player_score;
 
 //Function that updates player info
 updatePlayerInfo = () => {
     document.querySelector(".winner_whois").textContent = `Winner: ${current_winner}`;
-    document.querySelector(".scoreboard").textContent = `Your score: ${playerScore}`;
+    document.querySelector(".scoreboard").textContent = `Your score: ${player_score}`;
 }
+
+//Function that updates UI with computer choice
+displayComputerChoice = () => {
+
+    //Remove .activated classes from all computer icons
+    computer_icons.forEach((element) => {
+        element.classList.remove("activated")
+    })
+
+    let computer_choice_class = "";
+
+    //Find appropiate icon
+    switch(global_computer_choice) {
+        case("rock"):
+            computer_choice_class = "computer_rock";
+            break;
+        case("paper"):
+            computer_choice_class = "computer_paper";
+            break;
+        case("scissors"):
+            computer_choice_class = "computer_scissors";
+            break;
+    }
+
+    document.querySelector(`.${computer_choice_class}`).classList.add("activated");
+
+
+
+} 
 
 //Code for translating click into player choice
 let buttonToPlayerChoice = () => {
