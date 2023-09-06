@@ -266,3 +266,10 @@ let buttonToPlayerChoice = () => {
 }
 
 buttonToPlayerChoice();
+
+//Restarts
+let restartGame = () => {
+    document.querySelector(".restart_button").addEventListener("click", () => location.reload());
+}
+
+restartGame();
